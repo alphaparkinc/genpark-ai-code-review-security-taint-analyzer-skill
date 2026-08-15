@@ -1,0 +1,35 @@
+{
+  "name": "genpark-ai-code-review-security-taint-analyzer-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Autonomous AI pull request reviewer, security taint analysis & code hygiene governor.",
+  "author": "genpark",
+  "category": "security",
+  "tags": [
+    "code-review",
+    "taint-analysis",
+    "security-audit",
+    "pr-reviewer",
+    "ph-august-monthly"
+  ],
+  "inputs": {
+    "git_diff_content": {
+      "type": "string"
+    },
+    "security_rules": {
+      "type": "array"
+    }
+  },
+  "outputs": {
+    "critical_issues_found": {
+      "type": "integer"
+    },
+    "approval_verdict": {
+      "type": "string"
+    },
+    "suggested_fixes": {
+      "type": "array"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
