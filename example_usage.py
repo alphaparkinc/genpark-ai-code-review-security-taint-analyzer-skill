@@ -2,8 +2,7 @@ from client import AiCodeReviewSecurityTaintAnalyzerClient
 
 def main():
     client = AiCodeReviewSecurityTaintAnalyzerClient()
-    diff = "+ const token = process.env.API_KEY;
-+ await fetch(endpoint, { headers: { Authorization: token } });"
+    diff = """+ const token = process.env.API_KEY;\n+ await fetch(endpoint, { headers: { Authorization: token } });"""
     res = client.review_diff(diff)
     print(f"Approval Verdict: {res['approval_verdict']}")
     print(f"Issues Found: {res['critical_issues_found']}")
